@@ -5,34 +5,34 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Domov", href: "#" },
-    { name: "Obchod", href: "#" },
-    { name: "O nás", href: "#" },
-    { name: "Kontakt", href: "#" },
+    { name: "Domov", href: "" },
+    { name: "Obchod", href: "" },
+    { name: "O nás", href: "" },
+    { name: "Kontakt", href: "" },
   ];
 
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+    <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#">
               <img
-                className="h-10 w-auto"
-                src="/logo.svg"
+                className="w-auto h-10"
+                src={`${process.env.PUBLIC_URL}/materials/logo.png`}
                 alt="Logo"
               />
             </a>
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden space-x-8 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-gray-900 font-medium"
+                className="font-medium text-gray-700 hover:text-gray-900"
               >
                 {item.name}
               </a>
@@ -46,7 +46,7 @@ export default function Header() {
               className="text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               <svg
-                className="h-6 w-6"
+                className="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -75,13 +75,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="bg-white border-t border-gray-200 md:hidden">
           <nav className="px-2 pt-2 pb-4 space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:bg-gray-100"
               >
                 {item.name}
               </a>
