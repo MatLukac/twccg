@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Banner({ 
-  title = "Navrhujeme vzdelávacie a spoločenské hry", 
+  title = "Cesta začína jednou kartou.", 
   buttonText = "Naše produkty",
-  backgroundImage = `${process.env.PUBLIC_URL}/materials/805b3b_8d79a8c7525640389bc59388f00ff062~mv2.avif`,
+  backgroundImage = `${process.env.PUBLIC_URL}/materials/pozadie.png`,
   onButtonClick
 }) {
   return (
     <section
-      className="relative w-full h-[70vh] flex items-center justify-center text-white overflow-hidden"
+      className="relative w-full h-[50vh] flex items-center justify-center text-white overflow-hidden"
     >
       {/* Background image */}
       <img
@@ -32,12 +32,12 @@ export default function Banner({
           {title}
         </h1>
 
-        <button
+        {/* <button
           onClick={onButtonClick}
           className="px-8 py-3 font-semibold text-white transition-all bg-orange-500 rounded-full shadow-lg hover:bg-orange-600"
         >
           {buttonText}
-        </button>
+        </button> */}
       </motion.div>
     </section>
   );

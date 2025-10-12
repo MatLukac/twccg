@@ -6,8 +6,8 @@ export default function Header() {
 
   const navItems = [
     { name: "Domov", href: "" },
-    { name: "Obchod", href: "" },
-    { name: "O nás", href: "" },
+    { name: "Donio", href: "" },
+    { name: "O projekte", href: "" },
     { name: "Kontakt", href: "" },
   ];
 
@@ -15,14 +15,17 @@ export default function Header() {
     <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="#">
+          {/* Logo + text */}
+          <div className="flex items-center flex-shrink-0 space-x-2">
+            <a href="#" className="flex items-center space-x-2">
               <img
                 className="w-auto h-10"
                 src={`${process.env.PUBLIC_URL}/materials/logo.png`}
                 alt="Logo"
               />
+              <span className="text-xl font-semibold tracking-wide text-gray-800">
+                The Way of the Disciple
+              </span>
             </a>
           </div>
 
