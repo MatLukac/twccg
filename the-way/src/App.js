@@ -4,6 +4,9 @@ import Banner from "./components/Banner";
 import TeamSection from "./components/TeamSection";
 import InfoSection from "./components/InfoSection";
 import Footer from "./components/Footer";
+import Newsletter from "./components/Newsletter";
+import NewsGrid from "./components/NewsGrid";
+
 
 
 
@@ -17,7 +20,9 @@ function App() {
 
         <Banner />
         <InfoSection />
-        <TeamSection />
+        <NewsGrid />
+        <Newsletter />
+
         <Footer />
         
       </main>

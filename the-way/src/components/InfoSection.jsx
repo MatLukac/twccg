@@ -25,7 +25,7 @@ export default function InfoSection() {
   ];
 
   return (
-    <section className="py-12 text-center m-11 bg-gray-50">
+    <section className="py-12 text-center m-11 ">
       <div className="max-w-5xl px-4 mx-auto">
         <p className="mb-10 text-base text-gray-700 md:text-lg">
           Vitaj vo svete <span className="font-semibold text-gray-700">The Way CCG</span> — 
