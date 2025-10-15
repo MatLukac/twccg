@@ -8,6 +8,7 @@ export default function Header() {
     { name: "Domov", href: "" },
     { name: "Donio", href: "" },
     { name: "O projekte", href: "" },
+    { name: "pravidla", href: "" },
     { name: "Kontakt", href: "" },
   ];
 
