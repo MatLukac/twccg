@@ -8,6 +8,7 @@ import Newsletter from "./components/Newsletter";
 import NewsGrid from "./components/NewsGrid";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 
 
@@ -23,8 +24,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/contact" element={<Home />} />
         </Routes>
         
       </main>
