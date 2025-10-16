@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
   return (
     <div>
       <Banner />

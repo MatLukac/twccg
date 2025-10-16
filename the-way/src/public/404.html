@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; URL='https://yourusername.github.io/my-multipage-site/'" />
+  </head>
+  <body>
+    <script>
+      const redirect = window.location.href
+        .replace(/^.*my-multipage-site/, 'my-multipage-site')
+        .replace('#', '');
+      sessionStorage.redirect = redirect;
+      window.location.href = 'https://yourusername.github.io/my-multipage-site/';
+    </script>
+  </body>
+</html>

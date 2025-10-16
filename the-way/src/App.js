@@ -6,31 +6,32 @@ import InfoSection from "./components/InfoSection";
 import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
 import NewsGrid from "./components/NewsGrid";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Rules from "./pages/Rules";
 
 
 
 function App() {
   return (
     <div>
-      <Router>
+      <BrowserRouter  basename={process.env.PUBLIC_URL}>
       <Header />
       
       <main className="pt-16">  {/* offset kvôli fixnému headeru */}
         {/* zvyšok obsahu */}
 
         <Routes>
-          <Route path="/twccg" element={<Home />} />
-          <Route path="/twccg/about" element={<Home />} />
-          <Route path="/twccg/rules" element={<Home />} />
-          <Route path="/twccg/contact" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/contact" element={<Home />} />
         </Routes>
 
     
         
       </main>
-      </Router>
+      </BrowserRouter >
     </div>
   );
 }
