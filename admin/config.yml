@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: MatLukac/twccg/
+  repo: MatLukac/twccg
   branch: main
 
 media_folder: "public/images/uploads"
