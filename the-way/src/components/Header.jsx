@@ -1,15 +1,16 @@
 // src/components/Header.jsx
 import { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Domov", href: "" },
-    { name: "Donio", href: "" },
-    { name: "O projekte", href: "" },
-    { name: "pravidla", href: "/twccg/rules" },
-    { name: "Kontakt", href: "" },
+    { name: "Domov", to: "/" },
+    { name: "Donio", to: "/" },
+    { name: "O projekte", to: "/" },
+    { name: "Pravidlá", to: "/rules" },
+    { name: "Kontakt", to: "/" },
   ];
 
   return (
@@ -18,7 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo + text */}
           <div className="flex items-center flex-shrink-0 space-x-2">
-            <a href="#" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <img
                 className="w-auto h-10"
                 src={`${process.env.PUBLIC_URL}/materials/logo.png`}
@@ -27,19 +28,19 @@ export default function Header() {
               <span className="text-xl font-semibold tracking-wide text-gray-800">
                 The Way of the Disciple
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop nav */}
           <nav className="hidden space-x-8 md:flex">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 className="font-medium text-gray-700 hover:text-gray-900"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -82,13 +83,14 @@ export default function Header() {
         <div className="bg-white border-t border-gray-200 md:hidden">
           <nav className="px-2 pt-2 pb-4 space-y-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
+                onClick={() => setMobileMenuOpen(false)} // close menu after click
                 className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:bg-gray-100"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

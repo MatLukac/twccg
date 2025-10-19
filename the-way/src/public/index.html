@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <script>
+  const redirect = sessionStorage.redirect;
+  if (redirect) {
+    delete sessionStorage.redirect;
+    history.replaceState(null, null, redirect);
+  }
+</script>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>

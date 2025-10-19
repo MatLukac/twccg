@@ -17,7 +17,8 @@ import Rules from "./pages/Rules";
 function App() {
   return (
     <div>
-      <BrowserRouter basename="/twccg" >
+
+      <BrowserRouter  basename={process.env.PUBLIC_URL}>
       <Header />
       
       <main className="pt-16">  {/* offset kvôli fixnému headeru */}
@@ -25,11 +26,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/about" element={<Home />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/contact" element={<Home />} />
         </Routes>
         
       </main>
+
       </BrowserRouter>
     </div>
   );
