@@ -9,6 +9,7 @@ import NewsGrid from "./components/NewsGrid";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Rules from "./pages/Rules";
 
 
 
@@ -24,7 +25,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Home />} />
+          <Route path="/rules" element={<Rules />} />
           <Route path="/contact" element={<Home />} />
         </Routes>
         

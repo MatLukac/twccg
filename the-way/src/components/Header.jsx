@@ -8,7 +8,7 @@ export default function Header() {
     { name: "Domov", href: "" },
     { name: "Donio", href: "" },
     { name: "O projekte", href: "" },
-    { name: "pravidla", href: "" },
+    { name: "pravidla", href: "/twccg/rules" },
     { name: "Kontakt", href: "" },
   ];
 
