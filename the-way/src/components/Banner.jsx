@@ -23,22 +23,22 @@ export default function Banner({
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
 
       <motion.div
-  className="relative z-10 max-w-3xl px-4 text-center"
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
->
-  <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-5xl">
-    {title}
-  </h1>
+        className="relative z-10 max-w-3xl px-4 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-5xl">
+          {title}
+        </h1>
 
-  <button
-    onClick={onButtonClick}
-    className="flex items-center justify-center gap-2 px-20 py-3 mx-auto font-semibold text-white transition-all bg-orange-500 rounded-full shadow-lg mt-9 hover:bg-orange-600"
-  >
-    Donio <HeartHandshake />
-  </button>
-</motion.div>
+        <button
+          onClick={onButtonClick}
+          className="flex items-center justify-center gap-2 px-20 py-3 mx-auto font-semibold text-white transition-all bg-orange-500 rounded-full shadow-lg mt-9 hover:bg-orange-600"
+        >
+          Donio <HeartHandshake />
+        </button>
+      </motion.div>
 
       
     </section>
