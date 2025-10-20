@@ -13,7 +13,7 @@ export default function ContactForm() {
     setStatus("Odosielam...");
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbzal_qe6i2_j7k72eeOOV4XKMVJ64PEFXyEPYKSd8sjz_sGnRVcpGCoM5EGUHDW80MD/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwBzfyZmlzUCS3OG7m9UFTFeLhmzYOSAP8Huyp9EFiyoMiDjA9xvdbvCr65gGp_RDQv/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
