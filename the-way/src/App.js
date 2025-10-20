@@ -5,11 +5,14 @@ import TeamSection from "./components/TeamSection";
 import InfoSection from "./components/InfoSection";
 import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
-import NewsGrid from "./components/NewsGrid";
+
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Rules from "./pages/Rules";
+import ArticlePage from "./pages/ArticlePage";
+import Contact from "./pages/Contact";
 
 
 
@@ -29,7 +32,8 @@ function App() {
 
           <Route path="/about" element={<Home />} />
           <Route path="/rules" element={<Rules />} />
-          <Route path="/contact" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/article/:slug" element={<ArticlePage />} />
         </Routes>
         
       </main>

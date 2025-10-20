@@ -10,7 +10,7 @@ export default function Header() {
     { name: "Donio", to: "/" },
     { name: "O projekte", to: "/" },
     { name: "Pravidlá", to: "/rules" },
-    { name: "Kontakt", to: "/" },
+    { name: "Kontakt", to: "/contact" },
   ];
 
   return (
