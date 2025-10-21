@@ -8,4 +8,15 @@ content:
     image: /images/uploads/booster-front.png
     alt: asdas
     caption: asdasd
+  - type: text
+    text: |-
+      # d﻿ddddddddasdasdasdasddd 
+
+
+
+
+
+      a﻿aaa
+
+      ![](/images/uploads/booster-front.png)
 ---
