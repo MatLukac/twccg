@@ -13,7 +13,7 @@ export default function Home() {
       <InfoSection />
       <ArticleList />
       <Newsletter />
-      <Footer />
+      
     </div>
   );
 }

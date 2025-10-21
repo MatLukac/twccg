@@ -14,10 +14,10 @@ const ContactHeroSection = () => {
           </p>
           <div className="space-y-2">
             <p className="text-gray-700">
-              <span className="font-semibold">Email:</span> info@lebomadved.sk
+              <span className="font-semibold">Email:</span> zatial@nic.sk
             </p>
             <p className="text-gray-700">
-              <span className="font-semibold">Telefón:</span> +421 907 544 744
+              <span className="font-semibold">Telefón:</span> +421 777 777 777
             </p>
           </div>
         </div>

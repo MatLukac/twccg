@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <div>
       <Banner/>
+        <ContactForm/>
       <ContactHeroSection/>
-      <ContactForm/>
+     
     </div>
   );
 }

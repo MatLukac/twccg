@@ -11,13 +11,13 @@ export default function Footer() {
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-gray-400" />
               <a href="mailto:info@tvojweb.sk" className="transition hover:text-gray-100">
-                info@tvojweb.sk
+                zatial@nic.sk
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-gray-400" />
-              <a href="tel:+421900000000" className="transition hover:text-gray-100">
-                +421 900 000 000
+              <a href="tel:+421777777777" className="transition hover:text-gray-100">
+                +421 777 777 777
               </a>
             </li>
             <li className="flex items-center gap-2">

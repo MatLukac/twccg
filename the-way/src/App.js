@@ -19,12 +19,12 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
 
       <BrowserRouter  basename={process.env.PUBLIC_URL}>
       <Header />
       
-      <main className="pt-16">  {/* offset kvôli fixnému headeru */}
+      <main className="flex-1 pt-16">  {/* offset kvôli fixnému headeru */}
         {/* zvyšok obsahu */}
 
         <Routes>
@@ -39,7 +39,10 @@ function App() {
       </main>
 
       </BrowserRouter>
+
+      <Footer />
     </div>
+    
   );
 }
 

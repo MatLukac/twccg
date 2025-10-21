@@ -1,70 +1,111 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [checked, setChecked] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Odosielam...");
+
+    if (!checked) {
+      setStatusMsg("Musíte súhlasiť s odberom newslettera.");
+      return;
+    }
+
+    setLoading(true);
+    setStatusMsg("Odosielam...");
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbwBzfyZmlzUCS3OG7m9UFTFeLhmzYOSAP8Huyp9EFiyoMiDjA9xvdbvCr65gGp_RDQv/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbytzbTv8IqpqBkl0b96VtsCmtHPD7S6WUAhm5o8xqwArAy7-8MWZz8jcKy4y8GR0a2I/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ firstName, lastName, email, message }),
+        }
+      );
 
-      if (data.result === "success") {
-        setStatus("Správa bola odoslaná!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Chyba pri odosielaní.");
-      }
+      setSubmitted(true);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
+      setStatusMsg("✅ Správa bola odoslaná! Ďakujeme.");
     } catch (err) {
-      setStatus("Chyba siete.");
+      console.error(err);
+      setStatusMsg("Chyba pri odosielaní.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md p-6 mx-auto bg-white shadow rounded-2xl">
-      <h2 className="mb-4 text-2xl font-bold">Kontaktuj nás</h2>
+    <section className="py-16 bg-[#867f75]">
+      <div className="container max-w-2xl px-6 mx-auto">
+        <h2 className="mb-6 text-3xl font-bold text-gray-800">Ak máte otázky, pripomienky alebo požiadavky, neváhajte nás kontaktovať.</h2>
+        {submitted ? (
+          <p className="mb-4 font-medium text-green-700">{statusMsg}</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="md:flex md:space-x-4">
+              <input
+                name="firstName"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Krstné meno"
+                className="w-full p-3 border rounded-lg"
+                required
+              />
+              <input
+                name="lastName"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                placeholder="Priezvisko"
+                className="w-full p-3 mt-4 border rounded-lg md:mt-0"
+                required
+              />
+            </div>
+            <input
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              className="w-full p-3 border rounded-lg"
+              required
+            />
+            <textarea
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Vaša správa"
+              rows="5"
+              className="w-full p-3 border rounded-lg"
+              required
+            />
 
-      <input
-        type="text"
-        name="name"
-        placeholder="Meno"
-        value={formData.name}
-        onChange={handleChange}
-        className="w-full p-2 mb-3 border rounded"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="w-full p-2 mb-3 border rounded"
-        required
-      />
-      <textarea
-        name="message"
-        placeholder="Tvoja správa"
-        value={formData.message}
-        onChange={handleChange}
-        className="w-full p-2 mb-3 border rounded"
-        required
-      />
-      <button type="submit" className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
-        Odoslať
-      </button>
-      <p className="mt-2 text-sm text-gray-600">{status}</p>
-    </form>
+            <button
+              type="submit"
+              className="px-6 py-3 text-white bg-blue-600 rounded-lg"
+              disabled={loading}
+            >
+              {loading ? "Odosielam..." : "Odoslať"}
+            </button>
+          </form>
+        )}
+        {statusMsg && !submitted && (
+          <p className="mt-4 text-gray-700 break-words">{statusMsg}</p>
+        )}
+      </div>
+    </section>
   );
 }
