@@ -1,4 +1,4 @@
-import CMS from "decap-cms";
+import CMS from "decap-cms-app";
 
 // Inicializácia CMS
 CMS.init();
