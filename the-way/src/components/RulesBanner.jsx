@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { HeartHandshake } from "lucide-react";
 
 export default function Banner({ 
-  title = "Cesta začína jednou kartou.", 
-  buttonText = "Podpor nás na Donio",
-  backgroundImage = `${process.env.PUBLIC_URL}/materials/5U6A6906.JPG`,
-  onButtonClick
+  title = "Spoznaj hru The Way fo the Disciple.", 
+  backgroundImage = `${process.env.PUBLIC_URL}/materials/pozadie.png`
+  
 }) {
   return (
-    <section className="relative w-full h-[60vh] flex items-center justify-center text-[#D7B264] overflow-hidden">
+    <section
+      className="relative w-full h-[50vh] flex items-center justify-center text-white overflow-hidden"
+    >
       {/* Background image */}
       <img
         src={backgroundImage}
@@ -17,8 +18,8 @@ export default function Banner({
         className="absolute inset-0 object-cover w-full h-full brightness-75"
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-[#1E2A38]/80" />
+      {/* Overlay gradient (optional aesthetic effect) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
 
       <motion.div
         className="relative z-10 max-w-3xl px-4 text-center"
@@ -30,13 +31,10 @@ export default function Banner({
           {title}
         </h1>
 
-        <button
-          onClick={onButtonClick}
-          className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#F47C2B] rounded-full shadow-lg mt-9 hover:bg-[#D76615]"
-        >
-          {buttonText} <HeartHandshake />
-        </button>
+        
       </motion.div>
+
+      
     </section>
   );
 }

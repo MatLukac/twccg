@@ -15,6 +15,8 @@ export default function ArticlePage() {
 
   if (!post) return <p className="py-20 text-center">Načítavam...</p>;
 
+  console.log(post);
+
   return (
     <article className="max-w-3xl px-4 py-10 mx-auto">
       <h1 className="mb-3 text-4xl font-bold">{post.title}</h1>
@@ -26,6 +28,12 @@ export default function ArticlePage() {
         src={post.image}
         alt={post.title}
         className="mb-6 shadow-md rounded-xl"
+      />
+
+      <img
+        src="the-way/public/images/uploads/booster-front.png"
+        alt={post.title}
+        
       />
 
       <div

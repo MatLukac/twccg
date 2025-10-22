@@ -14,7 +14,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
+    <header className="fixed top-0 left-0 z-50 w-full bg-[#FCF5DC] shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo + text */}
@@ -22,7 +22,7 @@ export default function Header() {
             <Link to="/" className="flex items-center space-x-2">
               <img
                 className="w-auto h-10"
-                src={`${process.env.PUBLIC_URL}/materials/logo.png`}
+                src={`${process.env.PUBLIC_URL}/materials/Screenshot 2025-10-22 224155.png`}
                 alt="Logo"
               />
               <span className="text-xl font-semibold tracking-wide text-gray-800">
