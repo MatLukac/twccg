@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Rules from "./pages/Rules";
 import ArticlePage from "./pages/ArticlePage";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 
 
@@ -30,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/about" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/article/:slug" element={<ArticlePage />} />

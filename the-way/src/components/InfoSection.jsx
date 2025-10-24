@@ -29,10 +29,12 @@ export default function InfoSection() {
       <div className="max-w-5xl px-4 mx-auto">
         <p className="mb-10 text-base text-[#411F0F] md:text-lg">
           Vitaj vo svete{" "}
-          <span className="font-semibold text-[#733417]">The Way CCG</span> — 
-          kartová hra s hlbokou stratégiou, rozrastajúcou sa komunitou 
-          a originálnymi kartami. Objav svet plný taktiky, kreativity a 
-          kvalitného dizajnu.
+          <span className="font-semibold text-[#733417]">The Way of the Disciple</span> — 
+          zberateľskej kartovej hre, ktorá ti ukáže, že svätosť nie je nuda, ale najväčšie dobrodružstvo života.
+
+          
+
+     
         </p>
 
         <div className="grid grid-cols-2 gap-10 mt-10 sm:grid-cols-4">

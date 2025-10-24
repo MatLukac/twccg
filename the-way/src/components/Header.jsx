@@ -8,7 +8,7 @@ export default function Header() {
   const navItems = [
     { name: "Domov", to: "/" },
     { name: "Donio", to: "/" },
-    { name: "O projekte", to: "/" },
+    { name: "O projekte", to: "/about" },
     { name: "Pravidlá", to: "/rules" },
     { name: "Kontakt", to: "/contact" },
   ];
