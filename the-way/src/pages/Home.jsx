@@ -13,7 +13,7 @@ export default function Home() {
 
       <PopupModal
         id="marketing_banner_v1"
-        title="Donio je spustené!"
+        title="Donio nie je spustené!"
         description={<span></span>}
         ctaText="Pokračovať na Donio"
         ctaHref=""
