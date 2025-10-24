@@ -2,9 +2,8 @@
 title: Ako sa zrodila The Way of the Disciple
 date: 2025-10-24T16:11:00.000+02:00
 author: Kristián
-author_image: the-way/public/images/uploads/kiko.jpg
+author_image: the-way/public/images/uploads/kiko-2-.jpg
 image: the-way/public/images/uploads/spoločná.jpg
-category: Príbehy
 summary: Za hrou The Way of the Disciple stojíme štyria kamaráti z
   vysokej.Spojila nás vášeň pre stolové hry, dlhé večery plné diskusií a túžba
   vytvoriť niečo vlastné, čo by malo aj hlbší zmysel. Z tejto myšlienky sa

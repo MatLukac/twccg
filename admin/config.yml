@@ -18,8 +18,6 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Author Image", name: "author_image", widget: "image", required: false }
-      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Titulný obrázok článku (zobrazí sa v zozname článkov)" }
-      - { label: "Category", name: "category", widget: "string", required: false, hint: "Kategória článku (napr. Svätci, Stratégia, Príbehy)" }
       - { label: "Summary", name: "summary", widget: "text" }
 
       # Modular content sections
