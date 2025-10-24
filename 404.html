@@ -4,14 +4,17 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Zober aktuálnu cestu, napr. /rules alebo /about
+      // For HashRouter - just redirect to root with hash
       var path = window.location.pathname;
-      var search = window.location.search;
       var hash = window.location.hash;
-
-      // Presmeruj na root s hashom (aby React vedel, kam ísť)
-      var newUrl = "" + path + search + hash;
-      window.location.replace(newUrl);
+      
+      // If there's a path but no hash, convert path to hash
+      if (path !== '/' && !hash) {
+        window.location.replace('/#' + path);
+      } else if (!hash) {
+        // No path and no hash, just go home
+        window.location.replace('/');
+      }
     </script>
   </head>
   <body>
