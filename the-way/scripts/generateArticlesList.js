@@ -14,16 +14,19 @@ async function generateArticlesList() {
     markdownFiles.map(async (filename) => {
       const filePath = path.join(articlesDir, filename);
       const content = await fs.readFile(filePath, "utf-8");
-      const { data } = matter(content);
+      const { data, content: body } = matter(content);
 
       return {
         slug: filename.replace(".md", ""),
         title: data.title || "Bez názvu",
         date: data.date || new Date().toISOString(),
         author: data.author || "Neznámy autor",
+        author_image: data.author_image || "",
         summary: data.summary || "",
         category: data.category || "",
         image: data.image || "",
+        content: data.content || body, // Include full content/body
+        body: body, // Keep raw markdown body as backup
       };
     })
   );

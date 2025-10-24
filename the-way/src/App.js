@@ -12,6 +12,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Rules from "./pages/Rules";
 import ArticlePage from "./pages/ArticlePage";
+import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/articles" element={<Articles />} />
           <Route path="/article/:slug" element={<ArticlePage />} />
         </Routes>
         

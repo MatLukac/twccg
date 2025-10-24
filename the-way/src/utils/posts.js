@@ -1,5 +1,3 @@
-import yaml from "js-yaml";
-
 export async function getAllPosts() {
   // pripojíme timestamp k URL, aby sme obišli cache
   const cacheBuster = `?v=${new Date().getTime()}`;
@@ -11,22 +9,15 @@ export async function getAllPosts() {
 }
 
 export async function getPostBySlug(slug) {
-  const cacheBuster = `?v=${new Date().getTime()}`;
-  const res = await fetch(`/articles/${slug}.md${cacheBuster}`, {
-    cache: "no-store",
-  });
-  const text = await res.text();
+  // Load all articles from articles.json
+  const articles = await getAllPosts();
   
-  // Parse YAML front matter manually
-  const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const match = text.match(frontMatterRegex);
+  // Find the article with matching slug
+  const article = articles.find(a => a.slug === slug);
   
-  if (match) {
-    const frontMatter = yaml.load(match[1]);
-    const body = match[2];
-    return { slug, ...frontMatter, body };
+  if (!article) {
+    throw new Error(`Article with slug "${slug}" not found`);
   }
   
-  // Fallback if no front matter found
-  return { slug, content: text };
+  return article;
 }

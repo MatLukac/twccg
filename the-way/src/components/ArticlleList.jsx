@@ -16,7 +16,7 @@ export default function ArticlesList() {
   };
 
   return (
-    <section className="px-6 py-16 mx-auto mb-11 max-w-7xl bg-[#FCF5DC]">
+    <section id="articles" className="px-6 py-16 mx-auto mb-11 max-w-7xl bg-[#FCF5DC]">
       <div className="mb-10 text-center">
         <h2 className="text-3xl font-bold text-[#411F0F]">Najnovšie články</h2>
         <Link

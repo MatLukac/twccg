@@ -88,7 +88,7 @@ export default function ArticlePage() {
       <div className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="max-w-5xl px-4 py-4 mx-auto">
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/articles")}
             className="flex items-center gap-2 text-gray-600 transition-colors hover:text-gray-900"
           >
             <svg
