@@ -8,7 +8,7 @@ import Newsletter from "./components/Newsletter";
 
 
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Rules from "./pages/Rules";
 import ArticlePage from "./pages/ArticlePage";
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
 
-      <BrowserRouter  basename={process.env.PUBLIC_URL}>
+      <HashRouter  basename={process.env.PUBLIC_URL}>
       <Header />
       
       <main className="flex-1 pt-16">  {/* offset kvôli fixnému headeru */}
@@ -38,7 +38,7 @@ function App() {
         
       </main>
 
-      </BrowserRouter>
+      </HashRouter>
 
       <Footer />
     </div>

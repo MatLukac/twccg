@@ -4,6 +4,7 @@ import InfoSection from "../components/InfoSection";
 import ArticleList from "../components/ArticlleList";
 import Newsletter from "../components/Newsletter";
 import PopupModal from '../components/PopupModal';
+import Socials from "../components/Socials";
 
 export default function Home() {
   console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
@@ -24,6 +25,8 @@ export default function Home() {
       <InfoSection />
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
       <ArticleList />
+      <Socials/>
+      
       <Newsletter />
       
     </div>

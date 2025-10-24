@@ -1,6 +1,6 @@
 export default function RulesSumary() {
   return (
-    <section className="px-6 py-16 font-sans text-white bg-[#291309]">
+    <section className="px-6 py-16 mx-10 my-10 font-sans text-white bg-[#291309]">
       <div className="max-w-4xl mx-auto text-left">
         {/* Nadpis */}
         <h2 className="mb-4 text-3xl font-extrabold tracking-wide text-center">

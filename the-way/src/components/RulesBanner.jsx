@@ -4,7 +4,7 @@ import { HeartHandshake } from "lucide-react";
 
 export default function Banner({ 
   title = "Spoznaj hru The Way fo the Disciple.", 
-  backgroundImage = `${process.env.PUBLIC_URL}/materials/pozadie.png`
+  backgroundImage = `${process.env.PUBLIC_URL}/materials/IMG_5521.JPG`
   
 }) {
   return (
@@ -19,7 +19,7 @@ export default function Banner({
       />
 
       {/* Overlay gradient (optional aesthetic effect) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/30" />
 
       <motion.div
         className="relative z-10 max-w-3xl px-4 text-center"

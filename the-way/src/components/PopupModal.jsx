@@ -21,7 +21,7 @@ const closeBtnRef = useRef(null);
 const prevFocusedRef = useRef(null);
 
 
-const SHOW_DELAY = 1000; // 5 seconds before first show
+const SHOW_DELAY = 50000000000000000000000000; // 5 seconds before first show
 const REAPPEAR_DELAY = 10000; // 10 seconds before can reappear again
 
 

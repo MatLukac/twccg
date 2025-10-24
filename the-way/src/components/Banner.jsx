@@ -9,7 +9,7 @@ export default function Banner({
   onButtonClick
 }) {
   return (
-    <section className="relative w-full h-[60vh] flex items-center justify-center text-[#D7B264] overflow-hidden">
+    <section className="relative w-full h-[50vh] flex items-center justify-center text-[#D7B264] overflow-hidden">
       {/* Background image */}
       <img
         src={backgroundImage}
@@ -18,7 +18,7 @@ export default function Banner({
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-[#1E2A38]/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/30" />
 
       <motion.div
         className="relative z-10 max-w-3xl px-4 text-center"
@@ -26,13 +26,13 @@ export default function Banner({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-5xl">
+        <h1 className="mb-6 text-3xl font-extrabold drop-shadow-[2px_2px_0_#411F0F] leading-tight md:text-5xl">
           {title}
         </h1>
 
         <button
           onClick={onButtonClick}
-          className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#F47C2B] rounded-full shadow-lg mt-9 hover:bg-[#D76615]"
+          className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#D7B264] rounded-full shadow-lg mt-9 hover:bg-[#F0C66F]"
         >
           {buttonText} <HeartHandshake />
         </button>
