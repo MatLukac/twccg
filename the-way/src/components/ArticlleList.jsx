@@ -1,5 +1,6 @@
 import React from "react";
 import { getAllPosts } from "../utils/posts";
+import { Link } from "react-router-dom";
 
 export default function ArticlesList() {
   const [articles, setArticles] = React.useState([]);
@@ -12,12 +13,12 @@ export default function ArticlesList() {
     <section className="px-6 py-16 mx-auto mb-11 max-w-7xl bg-[#FCF5DC]">
       <div className="mb-10 text-center">
         <h2 className="text-3xl font-bold text-[#411F0F]">Najnovšie články</h2>
-        <a
-          href="/articles"
+        <Link
+          to="/articles"
           className="inline-block mt-2 text-sm font-medium text-[#733417] hover:underline"
         >
           Zobraziť všetky články →
-        </a>
+        </Link>
       </div>
 
       {articles.length === 0 ? (
@@ -25,9 +26,9 @@ export default function ArticlesList() {
       ) : (
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {articles.map((article) => (
-            <a
+            <Link
               key={article.slug}
-              href={`/article/${article.slug}`}
+              to={`/article/${article.slug}`}
               className="overflow-hidden transition-all duration-300 bg-[#FCF5DC] border border-[#D7B264]/40 shadow-md group rounded-2xl hover:shadow-lg hover:border-[#D7B264]"
             >
               <div className="relative overflow-hidden h-52">
@@ -54,7 +55,7 @@ export default function ArticlesList() {
                   Autor: {article.author}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       )}
