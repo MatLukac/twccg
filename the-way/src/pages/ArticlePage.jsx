@@ -141,17 +141,6 @@ export default function ArticlePage() {
         </div>
       </header>
 
-      {/* Featured Image */}
-      {post.image && (
-        <div className="max-w-5xl px-4 mx-auto mb-12">
-          <img
-            src={fixImagePath(post.image)}
-            alt={post.title}
-            className="w-full shadow-2xl rounded-xl"
-          />
-        </div>
-      )}
-
       {/* Article Content */}
       <article className="max-w-3xl px-4 pb-20 mx-auto">
         <div className="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-img:rounded-lg prose-img:shadow-lg">
