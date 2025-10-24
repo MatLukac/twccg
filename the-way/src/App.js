@@ -5,6 +5,7 @@ import TeamSection from "./components/TeamSection";
 import InfoSection from "./components/InfoSection";
 import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -24,6 +25,7 @@ function App() {
     <div className="flex flex-col min-h-screen">
 
       <HashRouter  basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <Header />
       
       <main className="flex-1 pt-16">  {/* offset kvôli fixnému headeru */}
