@@ -13,6 +13,7 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^11.3.2",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "lucide-react": "^0.545.0",
     "markdown-it": "^14.1.0",
     "react": "^19.2.0",

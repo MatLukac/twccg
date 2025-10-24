@@ -9,6 +9,12 @@ export default function ArticlesList() {
     getAllPosts().then(setArticles);
   }, []);
 
+  const fixImagePath = (path) => {
+    if (!path) return "/images/uploads/default.jpg";
+    // Remove "the-way/public" prefix if it exists
+    return path.replace(/^the-way\/public/, "").replace(/^public/, "");
+  };
+
   return (
     <section className="px-6 py-16 mx-auto mb-11 max-w-7xl bg-[#FCF5DC]">
       <div className="mb-10 text-center">
@@ -33,7 +39,7 @@ export default function ArticlesList() {
             >
               <div className="relative overflow-hidden h-52">
                 <img
-                  src={article.image || "/images/uploads/default.jpg"}
+                  src={fixImagePath(article.image)}
                   alt={article.title}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />

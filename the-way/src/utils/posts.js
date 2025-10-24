@@ -1,4 +1,4 @@
-import fm from "front-matter";
+import yaml from "js-yaml";
 
 export async function getAllPosts() {
   // pripojíme timestamp k URL, aby sme obišli cache
@@ -16,6 +16,17 @@ export async function getPostBySlug(slug) {
     cache: "no-store",
   });
   const text = await res.text();
-  const { attributes, body } = fm(text);
-  return { slug, ...attributes, content: body };
+  
+  // Parse YAML front matter manually
+  const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+  const match = text.match(frontMatterRegex);
+  
+  if (match) {
+    const frontMatter = yaml.load(match[1]);
+    const body = match[2];
+    return { slug, ...frontMatter, body };
+  }
+  
+  // Fallback if no front matter found
+  return { slug, content: text };
 }
