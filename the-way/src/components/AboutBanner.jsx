@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { HeartHandshake } from "lucide-react";
 
-export default function Banner({ 
-  title = "Hra, kde svätosť víťazí!.", 
+export default function AboutBanner({ 
+  title = "Cesta začína jednou kartou.", 
   buttonText = "Podpor nás na Donio",
-  backgroundImage = `${process.env.PUBLIC_URL}/materials/5U6A6906.JPG`,
+  backgroundImage = `${process.env.PUBLIC_URL}/materials/o_nas.png`,
   onButtonClick
 }) {
   return (
