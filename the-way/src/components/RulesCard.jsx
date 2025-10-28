@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function RulesCard() {
   const [openIndex, setOpenIndex] = useState(null);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [aspectType, setAspectType] = useState("standard"); // 'wide', 'tall', 'standard'
+  const imgRef = useRef(null);
 
   const items = [
     { title: "Meno svätca", content: "Každý svätec má svoje meno napísané hore v strede." },
-    { title: "Cnosti", content: "Cnosti sú vlastnosti, ktoré definujú svätca a jeho schopnosti. Zároveň charakterizujú, kam je možné svätca počas hry zaradiť." },
-    { title: "Typ karty", content: "Každý svätec patrí do určitého typu, ktorý ovplyvňuje jeho rolu v hre." },
-    { title: "Popis schopností karty, prípadne doplnkový text", content: "Schopnosti karty určujú špeciálne efekty alebo výhody, ktoré môže svätec používať." },
-    { title: "Vzácnosť karty", content: "Vzácnosť určuje, ako často sa karta objavuje a akú hodnotu má v zbierke." },
-    { title: "Učeník", content: "Niektoré karty môžu mať svojich učeníkov – tieto majú špeciálne efekty na druhej strane karty." },
+    { title: "Cnosti", content: "Cnosti sú vlastnosti reprezentované piatimi symbolmi, ktoré definujú svätca a jeho schopnosti. Zároveň charakterizujú, kam je možné svätca počas hry zaradiť." },
+    { title: "Patrón", content: "Každý svätec patrí do určitej kategórie, ktorá určuje jeho patrónstvo." },
+    { title: "Popis schopností karty", content: "Schopnosti karty určujú špeciálne efekty alebo výhody, ktoré môže svätec používať. Zároveň zistíš jeden z jeho citátov." },
+    { title: "Vzácnosť karty", content: "Vzácnosť karty určuje, ako často sa karta objavuje v balíčkoch a akú hodnotu má v zbierke." },
+    { title: "Učeník", content: "Karta otočená na rubovú stranu sa považuje za učeníka a predstavuje jeden symbol v ľubovoľnej kategórii cností." },
   ];
 
   const toggleItem = (index) => {
@@ -23,17 +25,51 @@ export default function RulesCard() {
     setIsFlipped(index === items.length - 1);
   };
 
-  // 💛 Presné pozície a rozmery obdĺžnikov (v % voči výške a šírke obrázka)
-  const highlightAreas = [
-    { top: "6%", left: "50%", width: "60%", height: "7%", translateX: "-50%" }, // meno svätca
-    { top: "17%", left: "18%", width: "25%", height: "8%", translateX: "0" }, // cnosti
-    { top: "55%", left: "50%", width: "60%", height: "7%", translateX: "-50%" }, // typ karty
-    { top: "64%", left: "50%", width: "80%", height: "18%", translateX: "-50%" }, // popis
-    { top: "91%", left: "50%", width: "14%", height: "6%", translateX: "-50%" }, // vzácnosť
-  ];
+
+  const highlightAreas = {
+    wide: [
+      { top: "3%", left: "50%", width: "45%", height: "10%", translateX: "-50%" },
+      { top: "13%", left: "22%", width: "20%", height: "10%", translateX: "0" },
+      { top: "57%", left: "50%", width: "40%", height: "9%", translateX: "-50%" },
+      { top: "65%", left: "50%", width: "70%", height: "30%", translateX: "-50%" },
+      { top: "91%", left: "50%", width: "14%", height: "9%", translateX: "-50%" },
+    ],
+    tall: [
+      { top: "3%", left: "50%", width: "74%", height: "9%", translateX: "-50%" },
+      { top: "12%", left: "5.5%", width: "30%", height: "10%", translateX: "0" },
+      { top: "57%", left: "50%", width: "52%", height: "9%", translateX: "-50%" },
+      { top: "63%", left: "50%", width: "90%", height: "30%", translateX: "-50%" },
+      { top: "90%", left: "50%", width: "25%", height: "9%", translateX: "-50%" },
+    ],
+    standard: [
+      { top: "2.5%", left: "50%", width: "50%", height: "10%", translateX: "-50%" },
+      { top: "12%", left: "18%", width: "22%", height: "10%", translateX: "0" },
+      { top: "56%", left: "50%", width: "45%", height: "9%", translateX: "-50%" },
+      { top: "64%", left: "50%", width: "68%", height: "30%", translateX: "-50%" },
+      { top: "90%", left: "50%", width: "18%", height: "10%", translateX: "-50%" },
+    ],
+  };
+
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+
+    const handleLoad = () => {
+      const ratio = img.naturalWidth / img.naturalHeight;
+      if (ratio > 0.8 && ratio < 1.3) setAspectType("standard");
+      else if (ratio >= 1.3) setAspectType("wide");
+      else setAspectType("tall");
+    };
+
+    if (img.complete) handleLoad();
+    else img.addEventListener("load", handleLoad);
+
+    return () => img.removeEventListener("load", handleLoad);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff9ec] flex flex-col items-center justify-center px-8 py-12">
+    <div className=" md:mx-24 my-10 mx-2 rounded-2xl shadow-md min-h-screen bg-[#fff9ec] flex flex-col items-center justify-center px-8 pb-12">
       <h1 className="mb-20 text-3xl italic font-extrabold text-center md:text-5xl">
         Čo je na karte svätca?
       </h1>
@@ -49,9 +85,7 @@ export default function RulesCard() {
               >
                 <span
                   className={`font-semibold text-left transition-colors duration-300 ${
-                    openIndex === index
-                      ? "text-[#D7B264]"
-                      : "text-gray-900 italic"
+                    openIndex === index ? "text-[#D7B264]" : "text-gray-900 italic"
                   }`}
                 >
                   {item.title}
@@ -81,17 +115,19 @@ export default function RulesCard() {
           ))}
         </div>
 
-        {/* Pravá strana - otočná karta */}
+        {/* Pravá strana – karta */}
         <div className="relative flex justify-center w-full md:w-1/2 md:sticky md:top-24 perspective">
+          {/* Kontajner s fixným pomerom strán */}
           <div
-            className={`relative w-72 md:w-80 h-[430px] transition-transform duration-[1200ms] transform-style-preserve-3d ${
+            className={`relative w-full max-w-[320px] aspect-[5/7] transition-transform duration-[1200ms] transform-style-preserve-3d ${
               isFlipped ? "rotate-y-180" : ""
             }`}
           >
             {/* Predná strana */}
             <div className="absolute inset-0 backface-hidden">
               <img
-                src={`${process.env.PUBLIC_URL}/materials/franta.png`}
+                ref={imgRef}
+                src={`${process.env.PUBLIC_URL}/materials/franta_full.png`}
                 alt="Front of card"
                 className="object-cover w-full h-full shadow-xl rounded-xl"
               />
@@ -100,28 +136,25 @@ export default function RulesCard() {
             {/* Zadná strana */}
             <div className="absolute inset-0 backface-hidden rotate-y-180">
               <img
-                src={`${process.env.PUBLIC_URL}/materials/franta_back.png`}
+                src={`${process.env.PUBLIC_URL}/materials/zad_full.png`}
                 alt="Back of card"
                 className="object-cover w-full h-full shadow-xl rounded-xl"
               />
             </div>
-          </div>
 
-          {/* Zvýraznenie (obdĺžnik) */}
-          {openIndex !== null &&
-            openIndex < highlightAreas.length &&
-            !isFlipped && (
-              <div
-                className="absolute border-4 border-[#D7B264] rounded-md transition-all duration-700 ease-in-out opacity-100 shadow-[0_0_20px_#D7B26488]"
-                style={{
-                  top: highlightAreas[openIndex].top,
-                  left: highlightAreas[openIndex].left,
-                  width: highlightAreas[openIndex].width,
-                  height: highlightAreas[openIndex].height,
-                  transform: `translateX(${highlightAreas[openIndex].translateX}) scale(1.02)`,
-                }}
-              />
-            )}
+            {/* Zvýraznenie */}
+            {openIndex !== null &&
+              openIndex < highlightAreas[aspectType].length &&
+              !isFlipped && (
+                <div
+                  className="absolute border-4 border-[#D7B264] rounded-md transition-all duration-700 ease-in-out opacity-100 shadow-[1px_1px_25px_#3b2a1a]"
+                  style={{
+                    ...highlightAreas[aspectType][openIndex],
+                    transform: `translateX(${highlightAreas[aspectType][openIndex].translateX}) scale(1.02)`,
+                  }}
+                />
+              )}
+          </div>
         </div>
       </div>
     </div>

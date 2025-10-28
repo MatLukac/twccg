@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { useState } from "react";
-import { Link } from "react-router-dom"; // ✅ import Link
+import { Link } from "react-router-dom"; 
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,8 +8,9 @@ export default function Header() {
   const navItems = [
     { name: "Domov", to: "/" },
     { name: "Donio", to: "/" },
-    { name: "O projekte", to: "/about" },
+    // { name: "O projekte", to: "/about" },
     { name: "Pravidlá", to: "/rules" },
+    { name: "Články", to: "/articles" },
     { name: "Kontakt", to: "/contact" },
   ];
 

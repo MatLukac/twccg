@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { HeartHandshake } from "lucide-react";
 
 export default function Banner({ 
-  title = "Spoznaj hru The Way fo the Disciple.", 
+  title = "Spoznaj hru The Way of the Disciple.", 
   backgroundImage = `${process.env.PUBLIC_URL}/materials/IMG_5521.JPG`
   
 }) {
@@ -22,12 +22,12 @@ export default function Banner({
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/30" />
 
       <motion.div
-        className="relative z-10 max-w-3xl px-4 text-center"
+        className="relative z-10 max-w-5xl px-4 text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-5xl">
+        <h1 className="w-full mb-6 text-3xl font-extrabold leading-tight md:text-5xl drop-shadow-[2px_2px_0_#411F0F]">
           {title}
         </h1>
 

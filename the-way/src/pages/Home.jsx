@@ -11,22 +11,21 @@ export default function Home() {
   return (
     <div>
 
-      <PopupModal
+      {/* <PopupModal
         id="marketing_banner_v1"
         title="Donio nie je spustené!"
         description={<span></span>}
         ctaText="Pokračovať na Donio"
         ctaHref=""
         expireDays={0.2} // modal will reappear after 30 days
-      />
+      /> */}
       
 
       <Banner />
       <InfoSection />
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
       <ArticleList />
-      <Socials/>
-      
+      <Socials />
       <Newsletter />
       
     </div>

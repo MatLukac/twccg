@@ -1,26 +1,26 @@
-import { Brain, Users, Layers, Sparkles } from "lucide-react";
+import { MapPin, Palette, Brain, Sparkles } from "lucide-react";
 
 export default function InfoSection() {
   const items = [
     {
+      icon: <MapPin className="w-10 h-10 mb-3 text-[#733417]" />,
+      title: "Cesta, nie len hra",
+      subtitle: "Objav svet, kde víťazstvo neprichádza silou, ale dobrotou. Každá partia je novou kapitolou na ceste svätosti.",
+    },
+    {
+      icon: <Sparkles className="w-10 h-10 mb-3 text-[#733417]" />,
+      title: "Svätci ako hrdinovia",
+      subtitle: "Zoznám sa s desiatkami svätcov-odvážnych, múdrych, pokorných. Každá karta rozpráva ich príbeh a inšpiruje tvoj vlastný.",
+    },
+    {
       icon: <Brain className="w-10 h-10 mb-3 text-[#733417]" />,
-      title: "Prepracovaná stratégia",
-      subtitle: "Hlboké herné mechaniky & taktika",
+      title: "Zmysluplná stratégia",
+      subtitle: "Kombinuj cnosti, schopnosti a taktiku. Víťazstvo čaká tých, ktorí dokážu spojiť múdrosť s vnútornou silou.",
     },
     {
-      icon: <Users className="w-10 h-10 mb-3 text-[#733417]" />,
-      title: "Rozrastajúca sa komunita",
-      subtitle: "Každý deň pribúdajú noví hráči",
-    },
-    {
-      icon: <Layers className="w-10 h-10 mb-3 text-[#733417]" />,
-      title: "Originálne karty",
-      subtitle: "Viac než 50 jedinečných kariet v hre",
-    },
-    {
-      icon: <Sparkles className="w-10 h-10 mb-3 text-[#D7B264]" />,
-      title: "Prémiová kvalita",
-      subtitle: "Kvalitné tlačené karty & dizajn",
+      icon: <Palette  className="w-10 h-10 mb-3 text-[#733417]" />,
+      title: "Krása v každom detaile",
+      subtitle: "Ručne maľované ilustrácie, citáty a dizajn vytvorený s láskou – pretože aj umenie môže viesť k niečomu vyššiemu.",
     },
   ];
 

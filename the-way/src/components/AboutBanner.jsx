@@ -5,7 +5,7 @@ import { HeartHandshake } from "lucide-react";
 export default function AboutBanner({ 
   title = "Cesta začína jednou kartou.", 
   buttonText = "Podpor nás na Donio",
-  backgroundImage = `${process.env.PUBLIC_URL}/materials/o_nas.png`,
+  backgroundImage = `${process.env.PUBLIC_URL}/materials/IMG_5471.jpg`,
   onButtonClick
 }) {
   return (
@@ -30,12 +30,7 @@ export default function AboutBanner({
           {title}
         </h1>
 
-        <button
-          onClick={onButtonClick}
-          className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#D7B264] rounded-full shadow-lg mt-9 hover:bg-[#F0C66F]"
-        >
-          {buttonText} <HeartHandshake />
-        </button>
+        
       </motion.div>
     </section>
   );

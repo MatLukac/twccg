@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Check } from "lucide-react";
+
+
 
 export default function ContactForm() {
   const [firstName, setFirstName] = useState("");
@@ -39,7 +42,7 @@ export default function ContactForm() {
       setLastName("");
       setEmail("");
       setMessage("");
-      setStatusMsg("✅ Správa bola odoslaná! Ďakujeme.");
+      setStatusMsg("Správa bola odoslaná! Ďakujeme.");
     } catch (err) {
       console.error(err);
       setStatusMsg("Chyba pri odosielaní.");
@@ -49,11 +52,11 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-16 bg-[#867f75]">
+    <section className="py-16 rounded-2xl bg-[#FCF5DC]">
       <div className="container max-w-2xl px-6 mx-auto">
-        <h2 className="mb-6 text-3xl font-bold text-gray-800">Ak máte otázky, pripomienky alebo požiadavky, neváhajte nás kontaktovať.</h2>
+        
         {submitted ? (
-          <p className="mb-4 font-medium text-green-700">{statusMsg}</p>
+          <p className="mb-4 font-medium ">{statusMsg}</p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="md:flex md:space-x-4">
@@ -95,7 +98,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="px-6 py-3 text-white bg-blue-600 rounded-lg"
+              className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#D7B264] rounded-full shadow-lg mt-9 hover:bg-[#F0C66F]"
               disabled={loading}
             >
               {loading ? "Odosielam..." : "Odoslať"}
@@ -103,7 +106,10 @@ export default function ContactForm() {
           </form>
         )}
         {statusMsg && !submitted && (
+          <>
+          {<Check />}
           <p className="mt-4 text-gray-700 break-words">{statusMsg}</p>
+          </>
         )}
       </div>
     </section>

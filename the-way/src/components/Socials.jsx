@@ -22,7 +22,7 @@ const Socials = () => {
   ];
 
   return (
-    <section className="bg-[#f9f6ef] py-16 mx-10 my-10">
+    <section className="bg-[#f9f6ef] rounded-2xl shadow-md py-16 mx-10 my-10">
       <div className="flex flex-col items-center max-w-6xl px-4 mx-auto text-center">
         {/* Header */}
         <h2 className="text-3xl font-bold text-[#3b2a1a] mb-3">
@@ -65,7 +65,7 @@ const Socials = () => {
 
 
 
-                <img src={post.thumb} alt={`Post ${post.id}`} className="object-cover w-full h-[500px]" />
+                <img src={post.thumb} alt={`Post ${post.id}`} className="object-cover w-full h-[200px] md:h-[500px]" />
                 <div className="absolute flex items-center justify-center w-8 h-8 text-xs text-white rounded-full top-2 right-2 bg-black/20">
                   <Instagram className="  text-[#c19448]" />
                 </div>

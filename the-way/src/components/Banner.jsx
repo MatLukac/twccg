@@ -1,16 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { HeartHandshake } from "lucide-react";
+import CountdownBanner from "./CountdownBanner";
 
 export default function Banner({ 
-  title = "Hra, kde svätosť víťazí!.", 
-  buttonText = "Podpor nás na Donio",
+  title = "Hra, kde svätosť víťazí!.",
   backgroundImage = `${process.env.PUBLIC_URL}/materials/5U6A6906.JPG`,
-  onButtonClick
 }) {
   return (
-    <section className="relative w-full h-[50vh] flex items-center justify-center text-[#D7B264] overflow-hidden">
-      {/* Background image */}
+    <section
+      className="relative w-full flex items-center justify-center text-[#D7B264] overflow-hidden " 
+      style={{
+        minHeight: "50vh", // bežná výška
+        padding: "clamp(3rem, 8vh, 6rem) 1vw", // dýchanie zhora aj zdola
+      }}
+    >
+      {/* Pozadie */}
       <img
         src={backgroundImage}
         alt="Banner background"
@@ -18,24 +22,27 @@ export default function Banner({
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40" />
 
+      {/* Obsah */}
       <motion.div
-        className="relative z-10 max-w-3xl px-4 text-center"
+        className="relative z-10 w-full max-w-[90vw] md:max-w-3xl text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="mb-6 text-3xl font-extrabold drop-shadow-[2px_2px_0_#411F0F] leading-tight md:text-5xl">
+        <h1
+          className="font-extrabold drop-shadow-[2px_2px_0_#411F0F]"
+          style={{
+            fontSize: "clamp(3rem, 4.5vw, 4rem)",
+            lineHeight: 1.2,
+            marginBottom: "clamp(3rem, 4vh, 3rem)",
+          }}
+        >
           {title}
         </h1>
 
-        <button
-          onClick={onButtonClick}
-          className="flex items-center justify-center gap-2 px-16 py-3 mx-auto font-semibold text-white transition-all bg-[#D7B264] rounded-full shadow-lg mt-9 hover:bg-[#F0C66F]"
-        >
-          {buttonText} <HeartHandshake />
-        </button>
+        <CountdownBanner />
       </motion.div>
     </section>
   );

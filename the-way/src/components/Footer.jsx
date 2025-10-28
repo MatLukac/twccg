@@ -10,16 +10,16 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-gray-900" />
-              <a href="mailto:thewayccg@gmail.com" className="transition hover:text-gray-100">
+              <a href="mailto:thewayccg@gmail.com" className="transition hover:text-gray-500">
                 thewayccg@gmail.com
               </a>
             </li>
-            <li className="flex items-center gap-2">
+            {/* <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-gray-900" />
-              <a href="tel:+421904068544" className="transition hover:text-gray-100">
+              <a href="tel:+421904068544" className="transition hover:text-gray-500">
                 +421 904 068 544
               </a>
-            </li>
+            </li> */}
             
           </ul>
         </div>
@@ -30,15 +30,15 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
               <Instagram className="w-4 h-4 text-gray-900" />
-              <a href="#" className="transition hover:text-gray-900">Instagram</a>
+              <a href="https://www.instagram.com/thewayccg" className="transition hover:text-gray-500">Instagram</a>
             </li>
             <li className="flex items-center gap-2">
               <Facebook className="w-4 h-4 text-gray-900" />
-              <a href="#" className="transition hover:text-gray-900">Facebook</a>
+              <a href="https://www.facebook.com/profile.php?id=61574830625101" className="transition hover:text-gray-500">Facebook</a>
             </li>
             <li className="flex items-center gap-2">
               <Youtube className="w-4 h-4 text-gray-900" />
-              <a href="#" className="transition hover:text-gray-900">YouTube</a>
+              <a href="https://www.youtube.com/@thewayccg" className="transition hover:text-gray-500">YouTube</a>
             </li>
           </ul>
         </div>

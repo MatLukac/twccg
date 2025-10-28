@@ -37,13 +37,13 @@ export default function RulesBegin() {
   ];
 
   return (
-    <section className="px-6 py-16 text-center text-gray-700">
-      <div className="max-w-6xl mx-auto">
+    <section className="px-6 pb-16 text-center text-gray-700 pt-14">
+      <div className="max-w-6xl mx-auto md:text-xl">
         <p className="mb-6">
           V hre <span className="font-semibold text-gray-900">The Way of The Disciple</span> sa dvaja hráči snažia preukázať svoju múdrosť a cnosť.
         </p>
         <p className="mb-6">
-          Získavajú symboly prostredníctvom svätcov, ktorí sa v priebehu hry môžu meniť na učeníkov.
+          Získavajú symboly reprezentujúce jednu z piatich cností prostredníctvom svätcov, ktorí sa v priebehu hry môžu meniť na učeníkov.
         </p>
         <p className="mb-12">
           Cieľom je získať sedem symbolov v troch rôznych kategóriách cností a tým dosiahnuť duchovné víťazstvo.

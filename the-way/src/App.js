@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 
 
+
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Rules from "./pages/Rules";
@@ -16,6 +17,7 @@ import ArticlePage from "./pages/ArticlePage";
 import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 
@@ -38,6 +40,7 @@ function App() {
           <Route path="/rules" element={<Rules />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/article/:slug" element={<ArticlePage />} />
         </Routes>
         

@@ -9,8 +9,9 @@ export default function Rules() {
     <div>
       <RulesBanner />
       <RulesBegin />
-      <RulesSumary />
       <RulesCard />
+      <RulesSumary />
+      
      
     </div>
   );
