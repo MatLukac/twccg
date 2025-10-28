@@ -22,7 +22,7 @@ const Socials = () => {
   ];
 
   return (
-    <section className="bg-[#f9f6ef] rounded-2xl shadow-md py-16 mx-10 my-10">
+    <section className="bg-[#f9f6ef] rounded-2xl shadow-md py-16 mx-2 md:mx-14 my-10">
       <div className="flex flex-col items-center max-w-6xl px-4 mx-auto text-center">
         {/* Header */}
         <h2 className="text-3xl font-bold text-[#3b2a1a] mb-3">
