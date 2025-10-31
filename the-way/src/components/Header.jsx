@@ -7,7 +7,7 @@ export default function Header() {
 
   const navItems = [
     { name: "Domov", to: "/" },
-    { name: "Donio", to: "/" },
+    { name: "Donio", to: "https://donio.sk/pribeh/12863?utm_source=copylink&utm_medium=socialshare&utm_campaign=share_button&utm_content=bb0aaf01-1fc2-422e-9eff-0d89f7d13370" },
     // { name: "O projekte", to: "/about" },
     { name: "Pravidlá", to: "/rules" },
     { name: "Články", to: "/articles" },

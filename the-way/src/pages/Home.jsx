@@ -25,7 +25,18 @@ export default function Home() {
       <Banner />
       <InfoSection />
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
-      <SupportersList/>
+      {/* <SupportersList/> */}
+
+      <section className="flex items-center justify-center mx-2 md:mx-10">
+        <iframe
+        className="w-full shadow-md max-w-7xl rounded-2xl"
+        src="https://donio.sk/widget2/12863"
+        width="100%"
+        height="420"
+        frameBorder="0"
+      ></iframe>
+      </section>
+
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
       <ArticleList />
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
