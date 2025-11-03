@@ -18,11 +18,13 @@ import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import usePageTracking from "./components/UsePageTracking";
 
 
 
 
 function App() {
+  
   return (
     <div className="flex flex-col min-h-screen">
 
