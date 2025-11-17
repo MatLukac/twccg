@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CountdownBanner from "./CountdownBanner";
 
 export default function Banner({ 
-  title = "Hra, kde svätosť víťazí!.",
+  title = "Hra, kde svätosť víťazí!",
   backgroundImage = `${process.env.PUBLIC_URL}/materials/5U6A6906.JPG`,
 }) {
   return (
