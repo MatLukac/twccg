@@ -42,7 +42,7 @@ export default function Banner({
           {title}
         </h1>
 
-        <CountdownBanner />
+        
       </motion.div>
     </section>
   );

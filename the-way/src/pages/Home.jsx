@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter";
 import PopupModal from '../components/PopupModal';
 import Socials from "../components/Socials";
 import SupportersList from "../components/SupportersList";
+import CampaignSummary from "../components/CampaignSummary";
 
 export default function Home() {
   console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
@@ -23,19 +24,12 @@ export default function Home() {
       
 
       <Banner />
-      <InfoSection />
+      
+      <CampaignSummary/>
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
-      {/* <SupportersList/> */}
-
-      <section className="flex items-center justify-center mx-2 md:mx-10">
-        <iframe
-        className="w-full shadow-md max-w-7xl rounded-2xl"
-        src="https://donio.sk/widget2/12863"
-        width="100%"
-        height="420"
-        frameBorder="0"
-      ></iframe>
-      </section>
+      
+      <InfoSection />
+      
 
       <div className="mx-10 my-10 border-t border-gray-600 border-dashed" />
       <ArticleList />

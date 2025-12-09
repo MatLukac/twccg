@@ -61,14 +61,3 @@ export default function CountdownBanner() {
     </div>
   );
 }
-
-function TimeBox({ label, value }) {
-  return (
-    <div className="flex flex-col items-center bg-white border border-[#E6DCC6] rounded-xl px-5 py-4 shadow-sm min-w-[80px]">
-      <span className="text-3xl font-bold text-[#3E2F1C]">
-        {String(value).padStart(2, "0")}
-      </span>
-      <span className="text-sm text-[#6C5B3E] mt-1">{label}</span>
-    </div>
-  );
-}
