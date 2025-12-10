@@ -4,6 +4,7 @@ date: 2025-10-24T19:29:00.000+02:00
 author: Kristián
 author_image: the-way/public/images/uploads/kiko.jpg
 image: the-way/public/images/uploads/karty.jpg
+category: Naša cesta
 summary: Naša prvá séria The Way of the Disciple je takmer pripravená a naším
   cieľom je doručiť ju podporovateľom ešte pred Vianocami 2025. Podporte hru už
   teraz cez Donio a staňte sa súčasťou dobrodružstva, ktoré spája zábavu,
