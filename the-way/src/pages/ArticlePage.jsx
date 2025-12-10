@@ -7,6 +7,7 @@ const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
+  breaks: true,
 });
 
 export default function ArticlePage() {
@@ -53,6 +54,7 @@ export default function ArticlePage() {
           return (
             <div
               key={index}
+              className="mb-6"
               dangerouslySetInnerHTML={{ __html: md.render(item.text) }}
             />
           );
