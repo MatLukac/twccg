@@ -2,7 +2,7 @@
 title: Ktoré karty a cnosti sú najlepšie?
 date: 2025-10-24T19:53:00.000+02:00
 author: Kristián
-author_image: the-way/public/images/uploads/kiko-2-.jpg
+author_image: the-way/public/images/uploads/kiko.jpg
 image: the-way/public/images/uploads/8c0bc3c8-cefd-44cb-9269-24e4bf856bd6.png
 category: Stratégia
 summary: Ak patríš medzi skúsenejších hráčov The Way of the Disciple, určite ťa
