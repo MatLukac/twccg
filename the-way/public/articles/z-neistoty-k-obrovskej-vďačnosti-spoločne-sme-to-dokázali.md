@@ -1,6 +1,6 @@
 ---
 title: "Z neistoty k obrovskej vďačnosti: Spoločne sme to dokázali!"
-date: 2025-10-24T16:11:00.000+02:00
+date: 2025-12-10T12:37:00.000+01:00
 author: Kristián
 author_image: the-way/public/images/uploads/kiko.jpg
 image: the-way/public/images/uploads/spoločná.jpg
