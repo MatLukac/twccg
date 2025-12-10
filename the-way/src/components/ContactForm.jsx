@@ -26,7 +26,7 @@ export default function ContactForm() {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbytzbTv8IqpqBkl0b96VtsCmtHPD7S6WUAhm5o8xqwArAy7-8MWZz8jcKy4y8GR0a2I/exec",
+        "https://script.google.com/macros/s/AKfycbysxQt9fHdA3o23cfUHGwYZ8J0YQNOlwVLLkBrRT8SN2_IirrJimUHM7zfC_8Swz4BG/exec",
         {
           method: "POST",
           mode: "no-cors",

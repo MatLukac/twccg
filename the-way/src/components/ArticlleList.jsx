@@ -4,16 +4,25 @@ import { Link } from "react-router-dom";
 
 export default function ArticlesList() {
   const [articles, setArticles] = React.useState([]);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     getAllPosts().then(setArticles);
+
+    // Update windowWidth on resize
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const fixImagePath = (path) => {
     if (!path) return "/images/uploads/default.jpg";
-    // Remove "the-way/public" prefix if it exists
     return path.replace(/^the-way\/public/, "").replace(/^public/, "");
   };
+
+  // Determine how many articles to show
+  const articlesToShow = windowWidth >= 768 ? 6 : 3; // md breakpoint in Tailwind is 768px
+  const displayedArticles = articles.slice(0, articlesToShow);
 
   return (
     <section id="articles" className="px-6 py-16 mx-2 md:mx-auto mb-11 max-w-7xl rounded-2xl shadow-md bg-[#FCF5DC]">
@@ -31,7 +40,7 @@ export default function ArticlesList() {
         <p className="text-center text-[#733417]/70">Načítavam články...</p>
       ) : (
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-          {articles.map((article) => (
+          {displayedArticles.map((article) => (
             <Link
               key={article.slug}
               to={`/article/${article.slug}`}

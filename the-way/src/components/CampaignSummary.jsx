@@ -1,53 +1,123 @@
 import React from "react";
-import { Heart } from "lucide-react";
-import { HeartHandshake } from "lucide-react";
+import { Heart, HeartHandshake, Sparkles } from "lucide-react";
 
-const CampaignSummary = ({ amountRaised = 5000, goal = 5000, supporters = [] }) => {
+const CampaignSummary = ({
+  amountRaised = 5000,
+  goal = 5000,
+  supporters = [
+    { 
+      name: "ACM Vinica", 
+      logo: `${process.env.PUBLIC_URL}/materials/logo-acm-vinica-png-1024x637.png`,
+      url: "https://acmvinica.sk"
+    },
+    { name: "Gabriel Oravec" },
+    { 
+      name: "Dom Quo Vadis", 
+      logo: `${process.env.PUBLIC_URL}/materials/QVlogoXLmod2.png`,
+      url: "https://domquovadis.sk"
+    },
+    { name: "Samuel Čutka" }
+  ],
+}) => {
+
+  // poradie partnerov na mobile
+  const mobileOrder = {
+    "ACM Vinica": 1,
+    "Dom Quo Vadis": 2,
+    "Gabriel Oravec": 3,
+    "Samuel Čutka": 4
+  };
+
+  const mobileOrderClasses = {
+    1: "order-1",
+    2: "order-2",
+    3: "order-3",
+    4: "order-4",
+  };
+
   return (
-    <section className="bg-[#FCF5DC] rounded-2xl shadow-md py-16 mx-2 md:mx-14 my-10">
-      <div className="flex flex-col items-center max-w-5xl px-4 mx-auto text-center">
-        {/* Header */}
-        <h2 className="text-3xl font-bold text-[#3b2a1a] mb-3">
-          Kampaň na Doniu úspešne ukončená!
-        </h2>
+    <section className="mx-2 my-10 md:mx-14">
+      <div className="grid grid-cols-1 gap-12 scale-90 lg:grid-cols-2">
 
-        <p className="text-[#5b4634] max-w-2xl mb-6">
-          Ďakujeme všetkým, ktorí prispeli na náš projekt. Spoločne sa nám
-          podarilo dosiahnuť cieľ a projekt môže pokračovať ďalej.
-        </p>
+        {/* LEFT SECTION */}
+        <div className="bg-[#FCF5DC] rounded-2xl shadow-md py-16 px-10 text-center flex flex-col items-center relative overflow-hidden">
+          {/* Decorative Sparkles icon */}
+          <Sparkles className="w-12 h-12 text-[#c19448] absolute top-4 right-4 opacity-30" />
 
-        {/* Amount Raised */}
-        <div className="bg-white border border-[#e0d2b1] rounded-xl shadow-sm px-8 py-6 mb-10">
-          <p className="text-[#3b2a1a] text-xl font-semibold mb-2">
-            Vyzbieraná suma
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#3b2a1a] mb-4 drop-shadow-sm">
+            Kampaň na Doniu úspešne ukončená!
+          </h2>
+
+          <p className="text-[#5b4634] max-w-md text-lg leading-relaxed mb-8">
+            Srdečne ďakujeme všetkým, ktorí sa rozhodli podporiť náš projekt. Vďaka vám môžu príbehy svätcov inšpirovať ďalších.
           </p>
-          <p className="text-4xl font-bold text-[#c19448]">
-            {amountRaised.toLocaleString()} €
-          </p>
-          <p className="text-[#5b4634] mt-1">Cieľ: {goal.toLocaleString()} €</p>
+
+          <div className="relative overflow-hidden bg-white border border-[#e7d9bc] rounded-2xl shadow-md px-10 py-8 w-full max-w-xs ring-1 ring-[#e8d9b7]/60">
+            <p className="text-[#3b2a1a] text-xl font-semibold mb-1">Vyzbieraná suma</p>
+            <p className="text-5xl font-bold text-[#c19448] tracking-tight drop-shadow-sm">
+              {amountRaised.toLocaleString()} €
+            </p>
+            <p className="text-[#6a5644] mt-2 text-sm">
+              Cieľ: <span className="font-medium">{goal.toLocaleString()} €</span>
+            </p>
+          </div>
         </div>
 
-        {/* Supporters list */}
-        <div className="flex items-center gap-2 text-2xl font-bold text-[#3b2a1a] mb-4">
-        <h3>Naši Podporovatelia</h3>
-        <HeartHandshake className="w-7 h-7 " />
+        {/* RIGHT SECTION */}
+        <div className="bg-[#F9F6EF] rounded-2xl shadow-md py-14 px-8 text-center lg:text-left relative">
+          {/* Decorative Heart icon */}
+          <Heart className="w-12 h-12 text-[#c19448] absolute top-4 right-4 opacity-30" />
+
+          <div className="flex items-center justify-center lg:justify-center gap-2 text-2xl font-bold text-[#3b2a1a] mb-4">
+            <h3>Ďakujeme našim partnerom</h3>
+          </div>
+
+          {supporters.length === 0 ? (
+            <p className="text-[#5b4634] italic">
+              Momentálne ešte nemáme partnerov, ale tešíme sa na spoluprácu!
+            </p>
+          ) : (
+            <ul className="grid grid-cols-1 gap-2 sm:gap-6 sm:grid-cols-2">
+              {supporters.map((s, idx) => {
+                const orderValue = mobileOrder[s.name] || idx + 1;
+                const orderClass = mobileOrderClasses[orderValue] || "";
+
+                const Wrapper = s.url ? "a" : "div";
+
+                return (
+                  <li
+                    key={idx}
+                    className={`${orderClass} sm:order-none`}
+                  >
+                    <Wrapper
+                      href={s.url}
+                      target={s.url ? "_blank" : undefined}
+                      rel={s.url ? "noopener noreferrer" : undefined}
+                      className={`flex items-center gap-4 px-3 py-2 rounded transition-colors duration-200
+                        ${s.url ? "hover:bg-[#f0e9d8] cursor-pointer" : ""}`}
+                    >
+                      {s.logo ? (
+                        <img
+                          src={s.logo}
+                          alt={s.name}
+                          className="object-contain rounded-md w-36 h-36 sm:w-40 sm:h-40"
+                        />
+                      ) : (
+                        <div className="flex w-20 h-20 sm:h-36"></div>
+                      )}
+
+                      <span className="text-[#3b2a1a] font-semibold text-lg">
+                        {s.name}
+                      </span>
+                    </Wrapper>
+                  </li>
+                );
+              })}
+            </ul>
+
+          )}
         </div>
 
-        {supporters.length === 0 ? (
-          <p className="text-[#5b4634]">Zatiaľ bez záznamu podporovateľov.</p>
-        ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-3xl text-left">
-            {supporters.map((name, idx) => (
-              <li
-                key={idx}
-                className="flex items-center bg-white border border-[#e0d2b1] rounded-xl px-4 py-3 shadow-sm"
-              >
-                <Heart className="w-5 h-5 text-[#c19448] mr-3" />
-                <span className="text-[#3b2a1a]">{name}</span>
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </section>
   );
