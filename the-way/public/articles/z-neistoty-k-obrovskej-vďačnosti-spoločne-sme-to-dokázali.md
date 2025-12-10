@@ -16,7 +16,11 @@ content:
       práve na tejto kampani stál a padal úspech celého nášho projektu.
 
 
+
+
       Teraz, pár dní po skončení kampane, je však neistota preč. Namiesto nej cítim len jednu veľkú emóciu a to obrovskú vďačnosť.
+
+
 
 
       Vďaka tomuto úspechu sme schopní priniesť *The Way of the Disciple* nie len ako koncept či prototyp, ale ako skutočný, reálny produkt. Hra takto oficiálne prichádza na svet.
@@ -27,13 +31,16 @@ content:
       moderným spôsobom.
 
 
-      Kampaň podporilo 155 úžasných ľudí a spoločne sa nám podarilo vyzbierať cieľovú sumu 5000 €.\
 
-      \
 
-      Ten moment bol o to silnejší, že sme cieľovú sumu "doklepli“ spoločne počas nášho **adventného streamu**. Veľmi nás teší, že sme sa s mnohými z vás mohli stretnúť aspoň takto online, porozprávať sa a zdieľať radosť z finišu priamo naživo.\
+      Kampaň podporilo 155 úžasných ľudí a spoločne sa nám podarilo vyzbierať cieľovú sumu 5000 €.
 
-      \
+
+
+      Ten moment bol o to silnejší, že sme cieľovú sumu "doklepli“ spoločne počas nášho **adventného streamu**. Veľmi nás teší, že sme sa s mnohými z vás mohli stretnúť aspoň takto online, porozprávať sa a zdieľať radosť z finišu priamo naživo.
+
+
+
 
       Vážime si každého jedného z vás, či ste si kúpili jeden balíček kariet, alebo ste sa rozhodli nás podporiť akokoľvek inak. Každý príspevok bol dôležitým krokom k cieľu.
 
@@ -41,18 +48,20 @@ content:
       Špeciálna vďaka patrí aj našim novými oficiálnym partnerom:
 
 
-      * **Dom Quo Vadis**
+      - **Dom Quo Vadis**
 
-      * **ACM Vinica**
+      - **ACM Vinica**
 
-      * **Gabriel Oravec**
+      - **Gabriel Oravec**
 
-      * **Samuel Čutka**
+      - **Samuel Čutka**
 
 
 
 
       Tešíme sa, že sme súčasťou takejto skvelej komunity a nevieme sa dočkať, kedy uvidíme prvé fotky z vašich hier!
+
+
 
 
       S vďakou a radosťou,
@@ -62,7 +71,7 @@ content:
   - type: image
     image: the-way/public/images/uploads/logo-acm-vinica-png-1024x637.png
     alt: ACM Vinica
-    caption: ACM Vinica
+    caption: ""
     text: >-
       
       **Ďakujeme** všetkým, ktorí nás podporili. Vy ste tí, ktorí umožnili, aby sa príbehy svätcov a cnosti dostali medzi mladých ľudí týmto novým, moderným spôsobom.
@@ -103,5 +112,5 @@ content:
   - type: image
     image: the-way/public/images/uploads/qvlogoxlmod2.png
     alt: Dom Quo Vadis
-    caption: Dom Quo Vadis
+    caption: ""
 ---
