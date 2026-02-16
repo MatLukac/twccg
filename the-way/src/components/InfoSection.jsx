@@ -30,7 +30,7 @@ export default function InfoSection() {
         <p className="mb-10 text-base text-[#411F0F] md:text-lg">
           Vitaj vo svete{" "}
           <span className="font-semibold text-[#733417]">The Way of the Disciple</span> — 
-          zberateľskej kartovej hre, ktorá ti ukáže, že svätosť nie je nuda, ale najväčšie dobrodružstvo života.
+          zberateľskej kartovej hry, ktorá ti ukáže, že svätosť nie je nuda, ale najväčšie dobrodružstvo života.
 
           
 

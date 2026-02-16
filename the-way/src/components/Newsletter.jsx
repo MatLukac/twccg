@@ -68,7 +68,7 @@ export default function NewsletterSection() {
               <label>
                 <a>
                 Súhlasím s odberom newslettera a potvrdzujem, že mám najmenej 16 rokov. 
-                <Link to="/privacy-policy" className="flex items-center space-x-2">
+                <Link to="/" className="flex items-center space-x-2">
                   
                   <span className="underline text-[#D7B264]">
                     Viac informácií
